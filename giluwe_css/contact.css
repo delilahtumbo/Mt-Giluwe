@@ -1,0 +1,230 @@
+
+/*Import Google Font - Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+:root
+{
+    --orange:rgb(255, 145, 0);
+    --green:rgb(14, 66, 38);
+    --lgreen:rgb(94, 203, 145);
+    --dblue:#1f2833;
+ 
+}
+
+body
+
+{
+    background-image: url("../Assets/Giluwe5.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+     display: block;
+    margin-top: 2rem;
+    padding:  0 10px;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+}
+
+.button-area a
+{
+    font-size: 18px;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 5px;
+    background: var(--orange);
+    padding: 13px 25px;
+    text-decoration: none;
+     
+}
+.button-area a:hover
+{
+    color: var(--dblue);
+}
+
+.button-area button:hover
+{
+    color: var(--dblue);
+}
+
+.wrapper
+{
+    width: 720px;
+    background: #1f2833;
+    border-radius: 5px;
+    min-height: 75vh;
+     padding:  0 40px;
+     margin-bottom: 150px;
+     align-items: center;
+     margin-left: 240px;
+     opacity: 0.9;
+     margin-top:3%;
+}
+
+.wrapper header
+{
+    font-size: 22px;
+    font-weight: 600;
+    padding: 20px 30px;
+    border-bottom: 1px solid #bfbfbf;
+    color: #fff;
+} 
+
+.wrapper form
+{
+    margin: 35px 30px;
+}
+
+form .dbl-field
+{
+    display:flex;
+    align-items: center;
+    margin-bottom: 25px;
+    justify-content: space-between;
+}
+
+.dbl-field .field
+{
+    height: 50px;
+    position: relative;
+    width: calc(100% / 2 - 13px);
+}
+
+
+form .field input,
+form .message textarea
+{
+    height: 100%;
+    width: 100%;
+    outline: none;
+    padding: 0 18px 0 48px;
+    border-radius: 5px;
+    border: 1px solid #bfbfbf;
+    font-size: 16px;
+}
+
+form .field input:focus ~i,
+form .message textarea:focus ~i
+{
+    color:var(--orange);
+}
+
+form .field input::placeholder,
+form .message textarea::placeholder
+{
+    color: #bfbfbf;
+}
+
+form .field input:focus,
+form .message textarea:focus
+{
+    border: 2px solid rgb(255, 145, 0);
+}
+
+
+.wrapper form i
+{
+    position: absolute;
+    left: 18px;
+    top: 50%;
+    color: #bfbfbf;
+    font-size: 17px;
+    pointer-events: none;
+    transform: translateY(-50%);
+}
+
+form .field input:focus ~ i
+{
+    color:rgb(255, 145, 0);
+}
+
+form .message
+{
+    position: relative;
+}
+
+form .message i
+{
+    top: 30px;
+    font-size: 20px;
+}
+
+form .message textarea
+{
+    min-height: 120px;
+    min-width:100%;
+    max-width: 100%;
+    max-height: 300px;
+    padding: 15px 20px 0 48px;
+}
+
+form .button-area
+{
+    margin: 25px;
+    display: flex;
+    align-items: center;
+}
+
+.button-area button
+{
+    font-size: 18px;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 5px;
+    background: rgb(255, 145, 0);
+    padding: 13px 25px;
+}
+
+.button-area span
+{
+    color: rgb(255, 145, 0);
+    margin-left: 30px;
+    display: none;
+}
+
+@media(max-width: 600px)
+{
+    .wrapper header
+    {
+        text-align: center;
+    }
+    form .dbl-field
+    {
+        margin-bottom: 0px;
+        flex-direction: column;
+    }
+    .dbl-field .field
+    {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    form .message textarea
+    {
+        resize: none;
+    }
+
+
+    .button-area button
+    {
+        width: 100%;
+    }
+    form .button-area
+    {
+        width: 100%;
+
+    }
+    .button-area span
+    {
+        text-align: center;
+        margin: 20px 0;
+    }
+}
