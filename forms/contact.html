@@ -155,12 +155,55 @@
                             </div>
                         </div>
 
-                        <button type="submit" class="submit-btn">
+                        <button type="submit" class="submit-btn" id="submit-btn">
                             Send Message <i class="fas fa-paper-plane"></i>
                         </button>
+
+                        <p class="status-msg" id="statusMsg"></p>
                     </form>
                 </div>
             </main>
         </div>
+
+    <script>
+        const contactForm = document.getElementById('contact-form');
+        const statusMsg   = document.getElementById('statusMsg');
+        const submitBtn   = document.getElementById('submit-btn');
+
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = 'Sending… <i class="fas fa-spinner fa-spin"></i>';
+            statusMsg.className = 'status-msg';
+            statusMsg.style.display = 'none';
+
+            const xhr = new XMLHttpRequest();
+            xhr.open('POST', 'message.php', true);
+            xhr.onload = function() {
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = 'Send Message <i class="fas fa-paper-plane"></i>';
+
+                if (xhr.status === 200 && xhr.responseText.trim() === 'success') {
+                    statusMsg.className = 'status-msg success';
+                    statusMsg.innerHTML = '<i class="fas fa-check-circle"></i> Message sent! Check your email for a confirmation.';
+                    statusMsg.style.display = 'block';
+                    contactForm.reset();
+                } else {
+                    statusMsg.className = 'status-msg error';
+                    statusMsg.innerHTML = '<i class="fas fa-exclamation-circle"></i> ' + (xhr.responseText || 'Something went wrong. Please try again.');
+                    statusMsg.style.display = 'block';
+                }
+            };
+            xhr.onerror = function() {
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = 'Send Message <i class="fas fa-paper-plane"></i>';
+                statusMsg.className = 'status-msg error';
+                statusMsg.innerHTML = '<i class="fas fa-exclamation-circle"></i> Network error — please try again.';
+                statusMsg.style.display = 'block';
+            };
+            xhr.send(new FormData(contactForm));
+        });
+    </script>
     </body>
 </html>
