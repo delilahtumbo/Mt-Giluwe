@@ -1,11 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
 *{
-   font-family: 'Poppins', sans-serif;
-   margin:0; padding:0;
+   font-family: 'Inter', sans-serif;
+   margin: 0; padding: 0;
    box-sizing: border-box;
-   outline: none; border:none;
+   outline: none; border: none;
    text-decoration: none;
+}
+
+:root {
+   --orange: rgb(255, 145, 0);
+   --dblue: #1f2833;
 }
 
 .container{
@@ -13,7 +18,7 @@
    display: flex;
    align-items: center;
    justify-content: center;
-   padding:20px;
+   padding: 20px;
    padding-bottom: 60px;
 }
 
@@ -22,43 +27,49 @@
 }
 
 .container .content h3{
-   font-size: 30px;
-   color:#333;
+   font-size: 28px;
+   font-weight: 600;
+   color: #333;
 }
 
 .container .content h3 span{
-   background: crimson;
-   color:#fff;
+   background: var(--orange);
+   color: #fff;
    border-radius: 5px;
-   padding:0 15px;
+   padding: 0 15px;
 }
 
 .container .content h1{
-   font-size: 50px;
-   color:#333;
+   font-size: 46px;
+   font-weight: 700;
+   color: #1a1a1a;
 }
 
 .container .content h1 span{
-   color:crimson;
+   color: var(--orange);
 }
 
 .container .content p{
-   font-size: 25px;
+   font-size: 20px;
+   font-weight: 400;
+   color: #555;
    margin-bottom: 20px;
 }
 
 .container .content .btn{
    display: inline-block;
-   padding:10px 30px;
-   font-size: 20px;
-   background: #333;
-   color:#fff;
-   margin:0 5px;
+   padding: 10px 28px;
+   font-size: 16px;
+   font-weight: 600;
+   background: var(--dblue);
+   color: #fff;
+   margin: 0 5px;
+   border-radius: 6px;
    text-transform: capitalize;
 }
 
 .container .content .btn:hover{
-   background: crimson;
+   background: var(--orange);
 }
 
 .form-container{
@@ -66,35 +77,47 @@
    display: flex;
    align-items: center;
    justify-content: center;
-   padding:20px;
+   padding: 20px;
    padding-bottom: 60px;
-   background: #eee;
+   background: #f4f6f8;
 }
 
 .form-container form{
-   padding:20px;
-   border-radius: 5px;
-   box-shadow: 0 5px 10px rgba(0,0,0,.1);
+   padding: 32px 28px;
+   border-radius: 10px;
+   box-shadow: 0 4px 24px rgba(0,0,0,.1);
    background: #fff;
    text-align: center;
-   width: 500px;
+   width: 460px;
 }
 
 .form-container form h3{
-   font-size: 30px;
+   font-size: 26px;
+   font-weight: 700;
+   letter-spacing: -.01em;
    text-transform: uppercase;
-   margin-bottom: 10px;
-   color:#333;
+   margin-bottom: 18px;
+   color: #1a1a1a;
 }
 
 .form-container form input,
 .form-container form select{
    width: 100%;
-   padding:10px 15px;
-   font-size: 17px;
-   margin:8px 0;
-   background: #eee;
-   border-radius: 5px;
+   padding: 11px 14px;
+   font-size: 15px;
+   font-family: 'Inter', sans-serif;
+   margin: 7px 0;
+   background: #f4f6f8;
+   border: 1px solid #dde1e6;
+   border-radius: 6px;
+   color: #333;
+}
+
+.form-container form input:focus,
+.form-container form select:focus{
+   border-color: var(--orange);
+   background: #fff;
+   outline: none;
 }
 
 .form-container form select option{
@@ -102,34 +125,42 @@
 }
 
 .form-container form .form-btn{
-   background: #fbd0d9;
-   color:crimson;
-   text-transform: capitalize;
-   font-size: 20px;
+   background: var(--orange);
+   color: #fff;
+   font-weight: 600;
+   font-size: 16px;
    cursor: pointer;
+   border: none;
+   margin-top: 12px;
 }
 
 .form-container form .form-btn:hover{
-   background: crimson;
-   color:#fff;
+   background: #e68900;
 }
 
 .form-container form p{
-   margin-top: 10px;
-   font-size: 20px;
-   color:#333;
+   margin-top: 14px;
+   font-size: 15px;
+   color: #555;
 }
 
 .form-container form p a{
-   color:crimson;
+   color: var(--orange);
+   font-weight: 500;
+}
+
+.form-container form p a:hover{
+   text-decoration: underline;
 }
 
 .form-container form .error-msg{
-   margin:10px 0;
+   margin: 10px 0;
    display: block;
-   background: crimson;
-   color:#fff;
-   border-radius: 5px;
-   font-size: 20px;
-   padding:10px;
+   background: #fff0f0;
+   color: #c0392b;
+   border: 1px solid #f5c6cb;
+   border-radius: 6px;
+   font-size: 14px;
+   padding: 10px;
+   font-weight: 500;
 }

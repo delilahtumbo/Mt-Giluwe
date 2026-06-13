@@ -1,102 +1,95 @@
-
-/*Import Google Font - Poppins */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
 *
 {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Poppins", sans-serif;
+    font-family: 'Inter', sans-serif;
 }
+
 :root
 {
-    --orange:rgb(255, 145, 0);
-    --green:rgb(14, 66, 38);
-    --lgreen:rgb(94, 203, 145);
-    --dblue:#1f2833;
- 
+    --orange: rgb(255, 145, 0);
+    --dblue: #1f2833;
 }
 
 body
-
 {
-    background-image: url("../Assets/Giluwe5.jpg");
+    background-image: url("../assets/giluwe5.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-     display: block;
+    display: block;
     margin-top: 2rem;
-    padding:  0 10px;
+    padding: 0 10px;
     min-height: 100vh;
     align-items: center;
     justify-content: center;
 }
 
-.button-area a
+.button-area > a
 {
-    font-size: 18px;
+    display: inline-block;
+    font-size: 1.5rem;
+    font-weight: 600;
     border: none;
     color: #fff;
     cursor: pointer;
-    border-radius: 5px;
+    border-radius: .5rem;
     background: var(--orange);
-    padding: 13px 25px;
+    padding: 1.1rem 2.4rem;
     text-decoration: none;
-     
-}
-.button-area a:hover
-{
-    color: var(--dblue);
 }
 
-.button-area button:hover
+.button-area a:hover
 {
-    color: var(--dblue);
+    background: #e68900;
 }
 
 .wrapper
 {
     width: 720px;
     background: #1f2833;
-    border-radius: 5px;
+    border-radius: 8px;
     min-height: 75vh;
-     padding:  0 40px;
-     margin-bottom: 150px;
-     align-items: center;
-     margin-left: 240px;
-     opacity: 0.9;
-     margin-top:3%;
+    padding: 0 40px 40px;
+    margin-bottom: 80px;
+    margin-left: 240px;
+    opacity: 0.96;
+    margin-top: 3%;
 }
 
 .wrapper header
 {
-    font-size: 22px;
-    font-weight: 600;
-    padding: 20px 30px;
-    border-bottom: 1px solid #bfbfbf;
+    font-size: 2.1rem;
+    font-weight: 700;
+    letter-spacing: -.01em;
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(255,255,255,.15);
     color: #fff;
-} 
+    margin-bottom: 30px;
+}
 
 .wrapper form
 {
-    margin: 35px 30px;
+    margin: 0;
 }
 
 form .dbl-field
 {
-    display:flex;
+    display: flex;
     align-items: center;
-    margin-bottom: 25px;
+    margin-bottom: 22px;
     justify-content: space-between;
+    gap: 16px;
 }
 
 .dbl-field .field
 {
     height: 50px;
     position: relative;
-    width: calc(100% / 2 - 13px);
+    width: calc(100% / 2 - 8px);
 }
-
 
 form .field input,
 form .message textarea
@@ -105,106 +98,128 @@ form .message textarea
     width: 100%;
     outline: none;
     padding: 0 18px 0 48px;
-    border-radius: 5px;
-    border: 1px solid #bfbfbf;
-    font-size: 16px;
-}
-
-form .field input:focus ~i,
-form .message textarea:focus ~i
-{
-    color:var(--orange);
-}
-
-form .field input::placeholder,
-form .message textarea::placeholder
-{
-    color: #bfbfbf;
+    border-radius: 6px;
+    border: 1px solid rgba(255,255,255,.2);
+    background: rgba(255,255,255,.07);
+    color: #fff;
+    font-size: 1.5rem;
+    font-family: 'Inter', sans-serif;
 }
 
 form .field input:focus,
 form .message textarea:focus
 {
-    border: 2px solid rgb(255, 145, 0);
+    border: 2px solid var(--orange);
+    background: rgba(255,255,255,.1);
 }
 
+form .field input::placeholder,
+form .message textarea::placeholder
+{
+    color: rgba(255,255,255,.4);
+    font-size: 1.4rem;
+}
 
 .wrapper form i
 {
     position: absolute;
-    left: 18px;
+    left: 16px;
     top: 50%;
-    color: #bfbfbf;
-    font-size: 17px;
+    color: rgba(255,255,255,.4);
+    font-size: 1.6rem;
     pointer-events: none;
     transform: translateY(-50%);
 }
 
-form .field input:focus ~ i
+form .field input:focus ~ i,
+form .message textarea:focus ~ i
 {
-    color:rgb(255, 145, 0);
+    color: var(--orange);
 }
 
 form .message
 {
     position: relative;
+    margin-bottom: 22px;
 }
 
 form .message i
 {
-    top: 30px;
-    font-size: 20px;
+    top: 20px;
+    transform: none;
+    font-size: 1.8rem;
 }
 
 form .message textarea
 {
-    min-height: 120px;
-    min-width:100%;
+    min-height: 130px;
+    min-width: 100%;
     max-width: 100%;
     max-height: 300px;
-    padding: 15px 20px 0 48px;
+    padding: 14px 20px 0 48px;
 }
 
 form .button-area
 {
-    margin: 25px;
+    margin: 10px 0 0;
     display: flex;
     align-items: center;
+    gap: 16px;
 }
 
 .button-area button
 {
-    font-size: 18px;
+    font-size: 1.6rem;
+    font-weight: 600;
     border: none;
     color: #fff;
     cursor: pointer;
-    border-radius: 5px;
-    background: rgb(255, 145, 0);
-    padding: 13px 25px;
+    border-radius: 6px;
+    background: var(--orange);
+    padding: 12px 32px;
+    transition: background .2s ease;
+}
+
+.button-area button:hover
+{
+    background: #e68900;
 }
 
 .button-area span
 {
-    color: rgb(255, 145, 0);
-    margin-left: 30px;
+    color: var(--orange);
+    font-size: 1.4rem;
     display: none;
 }
 
-@media(max-width: 600px)
+@media (max-width: 800px)
+{
+    .wrapper
+    {
+        width: 100%;
+        margin-left: 0;
+        padding: 0 20px 30px;
+    }
+}
+
+@media (max-width: 600px)
 {
     .wrapper header
     {
         text-align: center;
     }
+
     form .dbl-field
     {
-        margin-bottom: 0px;
         flex-direction: column;
+        margin-bottom: 0;
+        gap: 0;
     }
+
     .dbl-field .field
     {
         width: 100%;
-        margin-bottom: 20px;
+        margin-bottom: 18px;
     }
 
     form .message textarea
@@ -212,19 +227,13 @@ form .button-area
         resize: none;
     }
 
-
     .button-area button
     {
         width: 100%;
     }
+
     form .button-area
     {
-        width: 100%;
-
-    }
-    .button-area span
-    {
-        text-align: center;
-        margin: 20px 0;
+        flex-direction: column;
     }
 }
