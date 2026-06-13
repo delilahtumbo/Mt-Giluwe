@@ -170,6 +170,23 @@
         const statusMsg   = document.getElementById('statusMsg');
         const submitBtn   = document.getElementById('submit-btn');
 
+        /* ── Pre-fill when arriving from a Book Now button ── */
+        const params = new URLSearchParams(window.location.search);
+        if (params.get('ref') === 'booknow') {
+            const msgField = document.getElementById('message');
+            if (msgField && !msgField.value) {
+                msgField.value = "Hi, I'd like to book a trip to Mt Giluwe. Please let me know the available dates, packages, and pricing.";
+                msgField.focus();
+                /* move cursor to end */
+                msgField.setSelectionRange(msgField.value.length, msgField.value.length);
+            }
+            /* also update the card header to feel booking-specific */
+            const h2 = document.querySelector('.form-card-header h2');
+            const sub = document.querySelector('.form-card-header p');
+            if (h2)  h2.textContent = 'Book Your Adventure';
+            if (sub) sub.textContent = 'Fill in your details below and we\'ll confirm your booking within 24 hours.';
+        }
+
         contactForm.addEventListener('submit', function(e) {
             e.preventDefault();
 
