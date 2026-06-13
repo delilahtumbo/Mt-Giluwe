@@ -3,33 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width,
-     initial-scale=1.0">
-    <title>Giluwe Contact Form</title>
-    <link rel="stylesheet" href="../Giluwe_CSS/contact.css">
-    
-    <!--These links (Font awesome and google are used for icon)-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Mt Giluwe</title>
+    <link rel="stylesheet" href="../giluwe_css/contact.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="https://unpkg.com/swiper.com/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
 <body>
     <div class="button-area">
-        <a href="../index.html" src="" >BACK</a>
+        <a href="../index.html">BACK</a>
     </div>
     <br><br>
     <div class="wrapper">
         <header>Send us a Message</header>
-        <form action="#">
+        <form>
             <div class="dbl-field">
                 <div class="field">
                     <input type="text" name="name" placeholder="Enter your name">
                     <i class="fas fa-user"></i>
                 </div>
                 <div class="field">
-                    <input type="text" name="email" placeholder="Enter your email">
+                    <input type="email" name="email" placeholder="Enter your email">
                     <i class="fas fa-envelope"></i>
+                </div>
             </div>
-        </div>
             <div class="dbl-field">
                 <div class="field">
                     <input type="text" name="phone" placeholder="Enter your phone">
@@ -38,13 +35,12 @@
                 <div class="field">
                     <input type="text" name="country" placeholder="Enter your country">
                     <i class="fas fa-flag"></i>
-            </div>
+                </div>
             </div>
             <div class="message">
-                <textarea placeholder="Write your message" name="message" ></textarea>
+                <textarea placeholder="Write your message" name="message"></textarea>
                 <i class="material-icons"></i>
             </div>
-
             <div class="button-area">
                 <button type="submit">Send Message</button>
                 <span>Sending your message...</span>
@@ -52,7 +48,6 @@
         </form>
     </div>
 
-    <script src="../Giluwe_JavaScript/contact.js"></script>
-
+    <script src="../giluwe_javascript/contact.js"></script>
 </body>
 </html>

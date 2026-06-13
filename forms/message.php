@@ -1,42 +1,28 @@
 <?php
-    //lets get all form values
+require_once '../registration/config.php';
 
-    $name = $_POST['name'];
-    $email = $_POST['email'];
-    $phone = $_POST['phone'];
-    $country = $_POST['country'];
-    $message = $_POST['message'];
+$name    = mysqli_real_escape_string($conn, $_POST['name'] ?? '');
+$email   = mysqli_real_escape_string($conn, $_POST['email'] ?? '');
+$phone   = mysqli_real_escape_string($conn, $_POST['phone'] ?? '');
+$country = mysqli_real_escape_string($conn, $_POST['country'] ?? '');
+$message = mysqli_real_escape_string($conn, $_POST['message'] ?? '');
 
-    if(!empty($email) && !empty($message))
-    { //if email and message field is not empty
-        if(filter_var($email, FILTER_VALIDATE_EMAIL))
-        { //if user entered email is valid
-            $receiver = "00022@student.wpu.ac.pg"; //recievers email address
-            $subject = "From: $name <$email>"; //subject of the email. Subject looks like From: 
-            
-            //merging connecting all user values inside body variable. \n is used for new line
-            $body = "Name: $name\nEmail: $email\nPhone: $phone\nCountry: $country\n\nMessage: $message\n\nRegards, \n$name";
-            $sender = "From: $email"; //sender email
-            if(mail($receiver, $subject, $body, $sender))
-                { //mail() is an inbuilt php function to send mail
-                    echo "Your mesage has been sent!";
-                }
-            else
-                {
-                    echo "Sorry, faild to send your message!";
+if (empty($email) || empty($message)) {
+    echo "Email and message fields are required!";
+    exit;
+}
 
-                }
-        }
+if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    echo "Enter a valid email address!";
+    exit;
+}
 
-        else
-            {
-                echo "Enter a valid email address!";
-            }
+$sql = "INSERT INTO messages (name, email, phone, country, message)
+        VALUES ('$name', '$email', '$phone', '$country', '$message')";
 
-    }
-        else
-            {
-                echo "All fields are required!";
-            }
-
+if (mysqli_query($conn, $sql)) {
+    echo "Your message has been sent!";
+} else {
+    echo "Sorry, failed to send your message!";
+}
 ?>

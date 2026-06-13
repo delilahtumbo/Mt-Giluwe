@@ -58,6 +58,27 @@ WHERE NOT EXISTS (SELECT 1 FROM user_form WHERE email = 'shebakiap@gmail.com');
 INSERT IGNORE INTO `user_form` (`id`, `name`, `email`, `password`, `user_type`)
 SELECT NULL, 'Delilah', 'thelmatumbo@gmail.com', '5a8bf370052427008dda60f2fc06025b', 'user'
 WHERE NOT EXISTS (SELECT 1 FROM user_form WHERE email = 'thelmatumbo@gmail.com');
+
+CREATE TABLE IF NOT EXISTS `bookings` (
+  `id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `name` varchar(225) NOT NULL,
+  `email` varchar(225) NOT NULL,
+  `where_to` varchar(225) DEFAULT '',
+  `guests` int(11) DEFAULT 1,
+  `arrival_date` date DEFAULT NULL,
+  `leaving_date` date DEFAULT NULL,
+  `created_at` timestamp DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+CREATE TABLE IF NOT EXISTS `messages` (
+  `id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `name` varchar(225) DEFAULT '',
+  `email` varchar(225) NOT NULL,
+  `phone` varchar(50) DEFAULT '',
+  `country` varchar(100) DEFAULT '',
+  `message` text NOT NULL,
+  `created_at` timestamp DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 SQL
 
 echo "Database setup complete."

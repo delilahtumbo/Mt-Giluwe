@@ -1,31 +1,33 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<title>login form</title>
-	<meta http-equiv="content-type" content="text/html"; charset="UTF-8">
-	<meta name="viewport" content="width=device, inital-scale=1.0">
-	<link rel="stylesheet" type="text/css" href="css/form.css">
-	<script type="text/javascript" src="js/form.js"></script>
-	<!--Comment-->
+    <title>Login - Mt Giluwe</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/form.css">
 </head>
 <body>
-	<div class="button-area">
-        <a href="../index.html" src="" >BACK</a>
-    </div>		
-	<form id='userForm'>
-		<h1>Login Form</h1>
-		<p>Please enter your username and password</p>	
-		<label for='username'>Username:</label>
-		<input type="text" id="username" name="username"/><br>
-		<label for='password'>Password:</label>
-		<input type="text" id="password" name="password"/><br>
-		<button type="reset" id="reset">Reset</button>
-		<button id="submit" onclick="submitForm()" href="../home.html">Submit</button>	
-		<br><br>
-		<div class="no_acc"> 
-			<h3>Don't have a account</h3>
-			<button id="register" herf="../Assignment1 Giluwe Website/Registration/register.html">Sign Up</button>
-		</div>		
-	</form>   
-</body> 
+    <div class="button-area">
+        <a href="../index.html">BACK</a>
+    </div>
+    <form id="userForm" action="../registration/login_form.php" method="post">
+        <h1>Login Form</h1>
+        <p>Please enter your email and password</p>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required /><br>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required /><br>
+
+        <button type="reset" id="reset">Reset</button>
+        <button type="submit" name="submit">Submit</button>
+        <br><br>
+
+        <div class="no_acc">
+            <h3>Don't have an account?</h3>
+            <a href="../registration/register_form.php">Sign Up</a>
+        </div>
+    </form>
+</body>
 </html>

@@ -6,13 +6,10 @@ session_start();
 
 if(isset($_POST['submit'])){
 
-   $name = mysqli_real_escape_string($conn, $_POST['name']);
    $email = mysqli_real_escape_string($conn, $_POST['email']);
    $pass = md5($_POST['password']);
-   $cpass = md5($_POST['cpassword']);
-   $user_type = $_POST['user_type'];
 
-   $select = " SELECT * FROM user_form WHERE email = '$email' && password = '$pass' ";
+   $select = "SELECT * FROM user_form WHERE email = '$email' AND password = '$pass'";
 
    $result = mysqli_query($conn, $select);
 
@@ -45,11 +42,8 @@ if(isset($_POST['submit'])){
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>login form</title>
-
-   <!-- custom css file link  -->
+   <title>Login - Mt Giluwe</title>
    <link rel="stylesheet" href="css/style.css">
-
 </head>
 <body>
    
@@ -59,8 +53,8 @@ if(isset($_POST['submit'])){
       <h3>login now</h3>
       <?php
       if(isset($error)){
-         foreach($error as $error){
-            echo '<span class="error-msg">'.$error.'</span>';
+         foreach($error as $err){
+            echo '<span class="error-msg">'.$err.'</span>';
          };
       };
       ?>
@@ -68,6 +62,7 @@ if(isset($_POST['submit'])){
       <input type="password" name="password" required placeholder="enter your password">
       <input type="submit" name="submit" value="login now" class="form-btn">
       <p>don't have an account? <a href="register_form.php">register now</a></p>
+      <p><a href="../index.html">← Back to site</a></p>
    </form>
 
 </div>
