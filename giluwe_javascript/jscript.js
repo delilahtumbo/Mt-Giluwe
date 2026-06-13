@@ -60,10 +60,6 @@ if (imageBtn.length > 0) {
     imageBtn.forEach((btn, i) => {
         btn.addEventListener('click', () => setHomeSlide(i));
     });
-
-    setInterval(() => {
-        setHomeSlide((currentHomeSlide + 1) % imageBtn.length);
-    }, 4000);
 }
 
 /* ── Others section — manual dot navigation, 3-column ── */
