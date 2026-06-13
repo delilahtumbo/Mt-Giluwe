@@ -11,14 +11,18 @@
 :root {
     --orange:  rgb(255, 145, 0);
     --dblue:   #1f2833;
-    --navy:    #162231;
     --text:    #1a1a1a;
     --muted:   #6b7280;
     --border:  #e5e7eb;
     --bg:      #f8f9fb;
     --white:   #ffffff;
-    --radius:  10px;
+    --radius:  8px;
     --shadow:  0 4px 24px rgba(0,0,0,.10);
+}
+
+/* match index.html root font-size so 1rem = 10px site-wide */
+html {
+    font-size: 62.5%;
 }
 
 html, body {
@@ -29,6 +33,7 @@ body {
     background: var(--bg);
     color: var(--text);
     min-height: 100vh;
+    font-size: 1.5rem;
 }
 
 /* ── Two-column layout ───────────────────────────────── */
@@ -40,7 +45,7 @@ body {
 /* ── Left info panel ─────────────────────────────────── */
 .contact-info {
     position: relative;
-    width: 40%;
+    width: 38%;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -54,7 +59,7 @@ body {
     background-image: url('../assets/giluwe5.jpg');
     background-size: cover;
     background-position: center;
-    filter: brightness(.45);
+    filter: brightness(.42);
     z-index: 0;
 }
 
@@ -71,11 +76,11 @@ body {
     display: inline-flex;
     align-items: center;
     gap: .6rem;
-    color: rgba(255,255,255,.75);
+    color: rgba(255,255,255,.72);
     font-size: 1.4rem;
     font-weight: 500;
     text-decoration: none;
-    margin-bottom: 4rem;
+    margin-bottom: 3.6rem;
     transition: color .2s ease;
 }
 
@@ -91,12 +96,12 @@ body {
 }
 
 .brand img {
-    height: 48px;
+    height: 44px;
     width: auto;
 }
 
 .brand span {
-    font-size: 2.2rem;
+    font-size: 2rem;
     font-weight: 400;
     color: rgba(255,255,255,.9);
     letter-spacing: .02em;
@@ -108,19 +113,19 @@ body {
 }
 
 .contact-info h1 {
-    font-size: 3.4rem;
+    font-size: 3.6rem;
     font-weight: 700;
     color: #fff;
     line-height: 1.2;
     letter-spacing: -.02em;
-    margin-bottom: 1.6rem;
+    margin-bottom: 1.4rem;
 }
 
 .info-tagline {
-    font-size: 1.5rem;
+    font-size: 1.45rem;
     font-weight: 400;
-    line-height: 1.7;
-    color: rgba(255,255,255,.7);
+    line-height: 1.75;
+    color: rgba(255,255,255,.68);
     margin-bottom: 4rem;
 }
 
@@ -135,15 +140,15 @@ body {
 .contact-details li {
     display: flex;
     align-items: flex-start;
-    gap: 1.6rem;
+    gap: 1.4rem;
 }
 
 .detail-icon {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 4rem;
-    height: 4rem;
+    width: 3.8rem;
+    height: 3.8rem;
     border-radius: 50%;
     background: rgba(255,145,0,.18);
     flex-shrink: 0;
@@ -152,7 +157,7 @@ body {
 
 .detail-icon i {
     color: var(--orange);
-    font-size: 1.55rem;
+    font-size: 1.5rem;
 }
 
 .contact-details li div {
@@ -162,18 +167,18 @@ body {
 }
 
 .contact-details li strong {
-    font-size: 1.35rem;
+    font-size: 1.15rem;
     font-weight: 600;
-    color: rgba(255,255,255,.9);
-    letter-spacing: .04em;
+    color: rgba(255,255,255,.88);
+    letter-spacing: .06em;
     text-transform: uppercase;
 }
 
 .contact-details li span {
-    font-size: 1.45rem;
+    font-size: 1.4rem;
     font-weight: 400;
-    color: rgba(255,255,255,.65);
-    line-height: 1.5;
+    color: rgba(255,255,255,.62);
+    line-height: 1.55;
 }
 
 /* ── Right form panel ────────────────────────────────── */
@@ -191,15 +196,15 @@ body {
     width: 100%;
     max-width: 560px;
     background: var(--white);
-    border-radius: 16px;
+    border-radius: 14px;
     box-shadow: var(--shadow);
     padding: 3.6rem 3.6rem 4rem;
 }
 
 .form-card-header {
-    margin-bottom: 3.2rem;
+    margin-bottom: 2.8rem;
     border-bottom: 1px solid var(--border);
-    padding-bottom: 2.4rem;
+    padding-bottom: 2.2rem;
 }
 
 .form-card-header h2 {
@@ -211,7 +216,7 @@ body {
 }
 
 .form-card-header p {
-    font-size: 1.45rem;
+    font-size: 1.4rem;
     font-weight: 400;
     color: var(--muted);
     line-height: 1.6;
@@ -228,7 +233,7 @@ body {
 .form-group {
     display: flex;
     flex-direction: column;
-    gap: .6rem;
+    gap: .55rem;
     margin-bottom: 1.6rem;
 }
 
@@ -241,7 +246,7 @@ body {
 }
 
 label {
-    font-size: 1.35rem;
+    font-size: 1.3rem;
     font-weight: 600;
     color: #374151;
     letter-spacing: .01em;
@@ -263,7 +268,7 @@ label {
 }
 
 .textarea-wrap i {
-    top: 1.6rem;
+    top: 1.5rem;
     transform: none;
 }
 
@@ -271,7 +276,7 @@ label {
 .input-wrap textarea {
     width: 100%;
     padding: 1.1rem 1.4rem 1.1rem 4rem;
-    font-size: 1.45rem;
+    font-size: 1.4rem;
     font-family: 'Inter', sans-serif;
     font-weight: 400;
     color: var(--text);
@@ -287,6 +292,7 @@ label {
 .input-wrap textarea::placeholder {
     color: #b0b7c0;
     font-weight: 400;
+    font-size: 1.35rem;
 }
 
 .input-wrap input:focus,
@@ -303,7 +309,7 @@ label {
 
 .input-wrap textarea {
     resize: vertical;
-    min-height: 130px;
+    min-height: 120px;
     padding-top: 1.2rem;
     line-height: 1.6;
 }
@@ -316,7 +322,7 @@ label {
     gap: .8rem;
     width: 100%;
     margin-top: 2.4rem;
-    padding: 1.3rem 2.4rem;
+    padding: 1.2rem 2.4rem;
     background: var(--orange);
     color: #fff;
     font-size: 1.6rem;
@@ -331,7 +337,7 @@ label {
 
 .submit-btn:hover {
     background: #e68900;
-    box-shadow: 0 4px 16px rgba(255,145,0,.35);
+    box-shadow: 0 4px 16px rgba(255,145,0,.32);
     transform: translateY(-1px);
 }
 
@@ -342,35 +348,13 @@ label {
 
 /* ── Responsive ──────────────────────────────────────── */
 @media (max-width: 900px) {
-    .contact-page {
-        flex-direction: column;
-    }
-
-    .contact-info {
-        width: 100%;
-        min-height: auto;
-    }
-
-    .info-inner {
-        padding: 3rem 2.4rem 3.6rem;
-    }
-
-    .back-link {
-        margin-bottom: 2.4rem;
-    }
-
-    .brand {
-        margin-bottom: 2rem;
-    }
-
-    .contact-info h1 {
-        font-size: 2.8rem;
-    }
-
-    .info-tagline {
-        margin-bottom: 2.4rem;
-    }
-
+    .contact-page { flex-direction: column; }
+    .contact-info  { width: 100%; min-height: auto; }
+    .info-inner    { padding: 2.8rem 2.4rem 3.2rem; }
+    .back-link     { margin-bottom: 2rem; }
+    .brand         { margin-bottom: 1.8rem; }
+    .contact-info h1  { font-size: 3rem; }
+    .info-tagline  { margin-bottom: 2.4rem; }
     .contact-details {
         margin-top: 0;
         flex-direction: row;
@@ -378,39 +362,14 @@ label {
         gap: 1.6rem;
         padding-bottom: .4rem;
     }
-
-    .contact-details li {
-        flex: 1 1 180px;
-    }
+    .contact-details li { flex: 1 1 160px; }
 }
 
 @media (max-width: 600px) {
-    .contact-form-panel {
-        padding: 2.4rem 1.6rem;
-        align-items: flex-start;
-    }
-
-    .form-card {
-        padding: 2.4rem 2rem 2.8rem;
-        border-radius: 12px;
-    }
-
-    .form-card-header h2 {
-        font-size: 2rem;
-    }
-
-    .form-row {
-        grid-template-columns: 1fr;
-        gap: 0;
-        margin-bottom: 0;
-    }
-
-    .form-row .form-group {
-        margin-bottom: 1.6rem;
-    }
-
-    .contact-details {
-        flex-direction: column;
-        gap: 1.4rem;
-    }
+    .contact-form-panel { padding: 2.4rem 1.6rem; align-items: flex-start; }
+    .form-card { padding: 2.4rem 1.8rem 2.8rem; border-radius: 10px; }
+    .form-card-header h2 { font-size: 2rem; }
+    .form-row  { grid-template-columns: 1fr; gap: 0; margin-bottom: 0; }
+    .form-row .form-group { margin-bottom: 1.6rem; }
+    .contact-details { flex-direction: column; gap: 1.4rem; }
 }
