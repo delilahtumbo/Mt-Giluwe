@@ -2,52 +2,123 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us - Mt Giluwe</title>
-    <link rel="stylesheet" href="../giluwe_css/contact.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <title>Contact Us — Mt Giluwe</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="../giluwe_css/contact.css">
 </head>
 <body>
-    <div class="button-area">
-        <a href="../index.html">BACK</a>
-    </div>
-    <br><br>
-    <div class="wrapper">
-        <header>Send us a Message</header>
-        <form>
-            <div class="dbl-field">
-                <div class="field">
-                    <input type="text" name="name" placeholder="Enter your name">
-                    <i class="fas fa-user"></i>
-                </div>
-                <div class="field">
-                    <input type="email" name="email" placeholder="Enter your email">
-                    <i class="fas fa-envelope"></i>
-                </div>
-            </div>
-            <div class="dbl-field">
-                <div class="field">
-                    <input type="text" name="phone" placeholder="Enter your phone">
-                    <i class="fas fa-phone-alt"></i>
-                </div>
-                <div class="field">
-                    <input type="text" name="country" placeholder="Enter your country">
-                    <i class="fas fa-flag"></i>
-                </div>
-            </div>
-            <div class="message">
-                <textarea placeholder="Write your message" name="message"></textarea>
-                <i class="material-icons"></i>
-            </div>
-            <div class="button-area">
-                <button type="submit">Send Message</button>
-                <span>Sending your message...</span>
-            </div>
-        </form>
-    </div>
 
-    <script src="../giluwe_javascript/contact.js"></script>
+<div class="contact-page">
+
+    <!-- ── Left panel ─────────────────────────────── -->
+    <aside class="contact-info">
+        <div class="info-bg"></div>
+        <div class="info-inner">
+
+            <a href="../index.html" class="back-link">
+                <i class="fas fa-arrow-left"></i> Back to site
+            </a>
+
+            <div class="brand">
+                <img src="../assets/logo.png" alt="Mt Giluwe">
+                <span>Mt <strong>Giluwe</strong></span>
+            </div>
+
+            <h1>Get in Touch</h1>
+            <p class="info-tagline">Planning a visit to Papua New Guinea's second-highest peak? Send us a message and our team will respond within 24 hours.</p>
+
+            <ul class="contact-details">
+                <li>
+                    <span class="detail-icon"><i class="fas fa-map-marker-alt"></i></span>
+                    <div>
+                        <strong>Location</strong>
+                        <span>Southern Highlands Province,<br>Papua New Guinea</span>
+                    </div>
+                </li>
+                <li>
+                    <span class="detail-icon"><i class="fas fa-envelope"></i></span>
+                    <div>
+                        <strong>Email</strong>
+                        <span>info@mountgiluwe.pg</span>
+                    </div>
+                </li>
+                <li>
+                    <span class="detail-icon"><i class="fas fa-phone-alt"></i></span>
+                    <div>
+                        <strong>Phone</strong>
+                        <span>+675 000 0000</span>
+                    </div>
+                </li>
+            </ul>
+
+        </div>
+    </aside>
+
+    <!-- ── Right panel ────────────────────────────── -->
+    <main class="contact-form-panel">
+        <div class="form-card">
+            <div class="form-card-header">
+                <h2>Send us a Message</h2>
+                <p>Fill in the details below and we'll get back to you shortly.</p>
+            </div>
+
+            <form action="message.php" method="POST" id="contact-form">
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <div class="input-wrap">
+                            <i class="fas fa-user"></i>
+                            <input type="text" id="name" name="name" placeholder="Your full name" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <div class="input-wrap">
+                            <i class="fas fa-envelope"></i>
+                            <input type="email" id="email" name="email" placeholder="you@example.com" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <div class="input-wrap">
+                            <i class="fas fa-phone-alt"></i>
+                            <input type="text" id="phone" name="phone" placeholder="+675 000 0000">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="country">Country</label>
+                        <div class="input-wrap">
+                            <i class="fas fa-globe"></i>
+                            <input type="text" id="country" name="country" placeholder="Your country">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Your Message</label>
+                    <div class="input-wrap textarea-wrap">
+                        <i class="fas fa-comment-dots"></i>
+                        <textarea id="message" name="message" placeholder="Tell us about your plans, ask questions, or request a quote…" rows="5" required></textarea>
+                    </div>
+                </div>
+
+                <button type="submit" class="submit-btn">
+                    Send Message <i class="fas fa-paper-plane"></i>
+                </button>
+
+            </form>
+        </div>
+    </main>
+
+</div>
+
 </body>
 </html>
