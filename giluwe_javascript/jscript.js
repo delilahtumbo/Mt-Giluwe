@@ -66,50 +66,19 @@ if (imageBtn.length > 0) {
     }, 4000);
 }
 
-/* ── Others image slider (with fade) ────────────────── */
-let othersImageBtn = document.querySelectorAll('.others-img-btn');
-let othersSlides   = document.querySelectorAll('.others-slide');
-const othersImg    = document.querySelector('#others-image-slider');
+/* ── Others section — manual dot navigation, 3-column ── */
+const othersDots   = document.querySelectorAll('.others-dot');
+const othersGroups = document.querySelectorAll('.others-group');
 
-if (othersImageBtn.length > 0) {
-    let currentOthersSlide = 0;
-    let othersTransitioning = false;
-
-    if (othersImg) othersImg.style.transition = 'opacity .45s ease';
-
-    function setOthersSlide(index) {
-        if (othersTransitioning) return;
-        othersTransitioning = true;
-
-        const prevBtn   = document.querySelector('.others-img-btn.active');
-        const prevSlide = document.querySelector('.others-slide.active');
-
-        if (othersImg) othersImg.style.opacity = '0';
-
-        setTimeout(() => {
-            if (prevBtn)   prevBtn.classList.remove('active');
-            if (prevSlide) prevSlide.classList.remove('active');
-
-            othersImageBtn[index].classList.add('active');
-            othersSlides[index].classList.add('active');
-
-            if (othersImg) {
-                othersImg.src = othersImageBtn[index].getAttribute('data-src');
-                othersImg.style.opacity = '1';
-            }
-
-            currentOthersSlide = index;
-            othersTransitioning = false;
-        }, 450);
-    }
-
-    othersImageBtn.forEach((btn, i) => {
-        btn.addEventListener('click', () => setOthersSlide(i));
+if (othersDots.length > 0) {
+    othersDots.forEach((dot, i) => {
+        dot.addEventListener('click', () => {
+            document.querySelector('.others-dot.active').classList.remove('active');
+            document.querySelector('.others-group.active').classList.remove('active');
+            dot.classList.add('active');
+            othersGroups[i].classList.add('active');
+        });
     });
-
-    setInterval(() => {
-        setOthersSlide((currentOthersSlide + 1) % othersImageBtn.length);
-    }, 3800);
 }
 
 /* ── Swiper (keep for any remaining instances) ───────── */
