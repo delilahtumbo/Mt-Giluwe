@@ -51,7 +51,7 @@ if (formBtn) {
  
  var swiper = new Swiper(".slideshow-container", {
     spaceBetween:20,
-    loop:true,
+    loop:false,
     autoplay: 
     {
       delay:2500,
@@ -69,7 +69,7 @@ if (formBtn) {
       },
       1024:
       {
-       slidesPerView:3,
+       slidesPerView:2,
       },
     },
  });
